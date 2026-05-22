@@ -5,6 +5,7 @@ import express, {
 } from "express";
 import { pool } from "./db";
 import { userRoute } from "./modules/user/user.route";
+import { profileRoute } from "./modules/profile/profile.route";
 
 const app: Application = express();
 
@@ -23,18 +24,6 @@ app.get("/", (req: Request, res: Response) => {
 
 app.use("/api/users", userRoute);
 
-
-
-// Get All Users
-
-
-// Get Single User
-
-
-// Update User
-
-
-// Delete user
-
+app.use("/api/profile", profileRoute);
 
 export default app;
